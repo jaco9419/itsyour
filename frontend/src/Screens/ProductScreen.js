@@ -1,14 +1,30 @@
-import React from 'react';
-import data from '../data.js';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { detailsProduct } from '../actions/productActions.js';
 
 function ProductScreen (props) {
-    const product = data.products.find(x => x._id === props.match.params.id);
+    
+    const productDetails = useSelector(state => state.productDetails);
+    const { product, loading, error } = productDetails;
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(detailsProduct(props.match.params.id)); // this will run after component did mount, after the stuff render into the screen
+        return () => {
+            //
+        };
+    }, []);
+
     return <div>
         <div className="back-to-result">
             <Link to="/" >Back to result</Link>
         </div>
-        <div className="details">
+
+        {loading ? <div>Loading...</div>:
+        error ? <div>{error}</div> :
+        (
+            <div className="details">
             <div className="details-image">
                 <img src={product.image} alt="product" ></img>
             </div>
@@ -53,6 +69,9 @@ function ProductScreen (props) {
                 </ul>
             </div>
         </div>
+        )
+        }
+        
     </div>
 }
 

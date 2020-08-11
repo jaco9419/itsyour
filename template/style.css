@@ -40,7 +40,7 @@ body {
     font: 1.6rem Helvetica;
     height: 100vh;
     margin: 0;
-    color: var(--clr-dark)
+    color: var(--clr-dark);
 }
 
 .grid-container {
@@ -84,6 +84,7 @@ body {
 
 .main {
     grid-area: main;
+    min-height: 84.8vh;
 }
 
 .footer {
@@ -120,7 +121,7 @@ a:hover {
     flex: 0 1 34rem;
     margin: 1rem;
     height: 50rem;
-    border-bottom: .1rem var(--clr-light-accent) solid;
+    border-bottom: 0.1rem var(--clr-light-accent) solid;
 }
 
 .product {
@@ -161,7 +162,7 @@ a:hover {
 
 .brand button {
     font-size: var(--fs-h1);
-    padding: .5rem;
+    padding: 0.5rem;
     background: none;
     border: none;
     color: var(--clr-light);
@@ -182,7 +183,7 @@ a:hover {
 }
 
 .sidebar.open {
-    animation: open .25s linear;
+    animation: open 0.25s linear;
     transform: translateX(0);
 }
 
@@ -196,7 +197,7 @@ a:hover {
 }
 
 .sidebar.close {
-    animation: close .25s linear;
+    animation: close 0.25s linear;
     transform: translateX(-30rem);
 }
 
@@ -235,7 +236,7 @@ a:hover {
     width: 3.5rem;
     height: 3.5rem;
     padding-top: 0;
-    padding: .5rem;
+    padding: 0.5rem;
     font-size: 2rem;
     cursor: pointer;
     position: absolute;
