@@ -11,6 +11,7 @@ export default {
             brand: 'Nike',
             rating: 4.5,
             numReviews: 10,
+            countInStock: 6,
         },
         {
             _id: '2',
@@ -21,6 +22,7 @@ export default {
             brand: 'Nike',
             rating: 4,
             numReviews: 8,
+            countInStock: 0,
         },
         {
             _id: '3',
@@ -31,6 +33,7 @@ export default {
             brand: 'Nike',
             rating: 5,
             numReviews: 9,
+            countInStock: 6,
         },
         {
             _id: '4',
@@ -41,6 +44,7 @@ export default {
             brand: 'Lacoste',
             rating: 5,
             numReviews: 9,
+            countInStock: 20,
         },
         {
             _id: '5',
@@ -51,6 +55,7 @@ export default {
             brand: 'Forever 21',
             rating: 3,
             numReviews: 11,
+            countInStock: 6,
         },
         {
             _id: '6',
@@ -61,6 +66,7 @@ export default {
             brand: 'Adidas',
             rating: 4,
             numReviews: 13,
+            countInStock: 6,
         },
     ],
 };
