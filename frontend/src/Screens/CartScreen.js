@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { addToCart } from '../actions/cartActions';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 function CartScreen (props) {
 
@@ -37,11 +38,16 @@ function CartScreen (props) {
                     </div>
                     :
                     cartItems.map( item =>
-                        <div>
-                            <img src={item.image} alt='product' />
+                        <li>
+                            <div className='cart-image'>
+                                <img src={item.image} alt='product' />
+                            </div>
                             <div className='cart-name'>
                                 <div>
-                                    {item.name}
+                                    <Link to={'/product/' + item.product}>
+                                        {item.name}
+                                    </Link>
+                                    
                                 </div>
                                 <div>
                                     Quantity:
@@ -52,16 +58,24 @@ function CartScreen (props) {
                                     </select>
                                 </div>
                             </div>
-                            <div>
-                                {item.price}
+                            <div className='cart-price'>
+                                ${item.price}
                             </div>
-                        </div>
+                        </li>
                         )
                 }
             </ul>
         </div>
         <div className='cart-action'>
-        
+            <h3>
+                Subtotal ( {cartItems.reduce((a, c) => a + c.qty, 0)} items )
+                :
+                $ {cartItems.reduce((a, c) => a + c.price * c.qty, 0)}
+            </h3>
+            <button className="button primary" disabled={cartItems.length === 0}>
+                Proceed to Checkout
+            </button>
+            
         </div>
     </div>
 }
