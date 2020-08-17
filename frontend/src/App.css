@@ -13,11 +13,13 @@
   --clr-hover: #ff8000;
   --clr-gray: #808080;
   --clr-light-gray: rgba(0, 0, 0, 0.04);
+  --clr-red: #ac2121;
 
   --fs-h1: 3rem;
   --fs-h2: 2rem;
   --fs-h3: 1.5rem;
   --fs-body: 1rem;
+  --fs-button: 1.3rem;
 
   --bs: 0.25em 0.25em 0.75em rgba(0, 0, 0, 0.25),
       0.125em 0.125em 0.25em rgba(0, 0, 0, 0.15);
@@ -29,6 +31,7 @@
       --fs-h2: 2.5rem;
       --fs-h3: 2rem;
       --fs-body: 1.2rem;
+      --fs-button: 1.6rem;
   }
 }
 
@@ -42,6 +45,10 @@ body {
   height: 100vh;
   margin: 0;
   color: var(--clr-dark)
+}
+
+.full-width {
+  width: 100%;
 }
 
 .grid-container {
@@ -299,7 +306,7 @@ a:hover {
   flex-direction: column;
 }
 
-.add-to-cart-btn {
+.button {
   padding: 1rem;
   cursor: pointer;
   border-radius: 0.5rem;
@@ -308,9 +315,10 @@ a:hover {
   color: var(--clr-light);
   transition: 0.3s;
   margin-top: 1rem;
+  font-size: var(--fs-button);
 }
 
-.add-to-cart-btn:hover {
+.button:hover {
   background-color: var(--clr-hover);
   color: var(--clr-dark);
 }
@@ -376,4 +384,20 @@ a:hover {
   flex: 1 1;
   font-size: var(--fs-h2);
   text-align: right;
+}
+
+.delete-button {
+  padding: 0.6rem;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  border: none;
+  background-color: var(--clr-red);
+  color: var(--clr-light);
+  transition: 0.3s;
+  margin: 1rem;
+  font-size: var(--fs-button);
+}
+
+.delete-button:hover {
+  opacity: 0.85;
 }

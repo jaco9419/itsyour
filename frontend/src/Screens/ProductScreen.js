@@ -77,7 +77,7 @@ function ProductScreen(props) {
                             <li>
                                 {product.countInStock > 0 ? (
                                     <button
-                                        className="add-to-cart-btn"
+                                        className="button"
                                         onClick={handleAddToCart}
                                     >
                                         Add to Cart
