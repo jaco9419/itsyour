@@ -23,6 +23,11 @@
 
   --bs: 0.2em 0.2em 1.5em 0.3em rgba(0, 0, 0, 0.15),
       0.125em 0.125em 1em 0.2em rgba(0, 0, 0, 0.25);
+
+  --bs-2: 0.1em 0.1em 1.5em 0.2em rgba(0, 0, 0, 0.15);
+
+  --bs-3: 0.05em 0.05em 1.5em 0.1em rgba(0, 0, 0, 0.15),
+      0.1em 0.1em 0.5em 0.05em rgba(0, 0, 0, 0.1);
 }
 
 @media (min-width: 800px) {
@@ -363,7 +368,6 @@ select option:hover {
 
 .button:hover {
   background-color: var(--clr-hover);
-  color: var(--clr-dark);
 }
 
 .back-to-result {
@@ -399,7 +403,7 @@ select option:hover {
   flex: 1 1 20rem;
   background: var(--clr-light-gray);
   border-radius: .5rem;
-  padding: 1rem;
+  padding: 2rem;
 }
 
 .cart-list-container {
@@ -407,13 +411,19 @@ select option:hover {
   list-style-type: none;
 }
 
+.cart-list-top {
+  background: var(--clr-hover);
+  color: var(--clr-light)
+}
+
 .cart-list-container li {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  margin-bottom: 2rem;
-  border-bottom: .1rem var(--clr-gray) solid;
-  padding-bottom: 2rem;
+  margin-bottom: 1.5rem;
+  padding: 2rem;
+  box-shadow: var(--bs-3);
+  border-radius: 6px;
 }
 
 .cart-list-container li img {
@@ -428,9 +438,13 @@ select option:hover {
 }
 
 .cart-image {
+  display: flex;
   width: 10rem;
-  text-align: right;
   margin-right: 2rem;
+}
+
+.cart-image img {
+  margin: auto;
 }
 
 .cart-name {

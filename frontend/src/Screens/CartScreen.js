@@ -29,7 +29,7 @@ function CartScreen (props) {
     return <div className='cart'>
         <div className='cart-list'>
             <ul className='cart-list-container'>
-                <li>
+                <li className='cart-list-top'>
                     <h3>
                         Shopping Cart
                     </h3>
