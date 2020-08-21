@@ -1,5 +1,6 @@
 import express from 'express';
 import User from '../models/userModel';
+import { getToken } from '../util';
 
 const router = express.Router();
 
@@ -16,10 +17,10 @@ router.post('/signin', async (req, res) => {
             name: signinUser.name,
             email: signinUser.email,
             isAdmin: signinUser.isAdmin,
-            token: getToken(user)
+            token: getToken(signinUser)
         })
     } else {
-        res.status(401).send({ msg: 'Invalid Email or Password' });
+        res.status(401).send({ message: 'Invalid Email or Password' });
     }
 
 })
@@ -37,7 +38,7 @@ router.get('/createadmin', async (req, res) => {
         res.send(newUser);
 
     } catch (error) {
-        res.send({ msg: error.message });
+        res.send({ message: error.message });
     }
 });
 

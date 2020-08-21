@@ -75,6 +75,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
+  box-shadow: var(--bs-3);
 }
 
 .brand a {
@@ -108,6 +109,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: var(--bs);
 }
 
 a {
@@ -364,10 +366,12 @@ select option:hover {
   transition: 0.3s;
   margin-top: 1rem;
   font-size: var(--fs-button);
+  text-align: center;
 }
 
 .button:hover {
   background-color: var(--clr-hover);
+  color: var(--clr-light);
 }
 
 .back-to-result {
@@ -475,4 +479,35 @@ select option:hover {
 
 .delete-button:hover {
   opacity: 0.85;
+}
+
+/* Forms */
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  width: 32rem;
+  padding: 2rem;
+  border-radius: .5rem;
+  box-shadow: var(--bs-3);
+  list-style-type: none;
+}
+
+.form-container li {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0;
+}
+
+.input {
+  padding: 1rem;
+  border: .1rem #c0c0c0 solid;
+  border-radius: .5rem;
 }

@@ -1,40 +1,53 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
+import { signin } from '../actions/userActions';
 
 function SigninScreen(props) {
 
     const [ email, setEmail ] = useState('');
     const [ password, setPassword ] = useState('');
-
+    const userSignin = useSelector(state => state.userSignin);
+    const { loading, userInfo, error } = userSignin;
     const dispatch = useDispatch();
 
     useEffect(() => {
-        
+        if (userInfo) {
+            props.history.push('/');
+        }
         return () => {
             //
         };
-    }, []);
+    }, [userInfo]);
 
     const submitHandler = (e) => {
         e.preventDefault();
+        dispatch(signin(email, password));
     }
 
     return <div className='form'>
         <form onSubmit={submitHandler}>
             <ul className='form-container'>
                 <li>
-                    <label for='email'>
+                    <h3>Sign in</h3>
+                </li>
+                <li>
+                    {loading && <div>Loading...</div>}
+                    {error && <div>{error}</div>}
+
+                </li>
+                <li>
+                    <label htmlFor='email'>
                         Email
                     </label>
-                    <input type='email' name='email' id='email' onChange={(e) => setEmail(e.target.value)}>
+                    <input className='input' type='email' name='email' id='email' onChange={(e) => setEmail(e.target.value)}>
                     </input>
                 </li>
                 <li>
-                    <label for='password'>
+                    <label htmlFor='password'>
                         Password
                     </label>
-                    <input type='password' name='password' id='password' onChange={(e) => setPassword(e.target.password)}>
+                    <input className='input' type='password' name='password' id='password' onChange={(e) => setPassword(e.target.password)}>
                     </input>
                 </li>
                 <li>
@@ -44,7 +57,7 @@ function SigninScreen(props) {
                     New to itsyours?
                 </li>
                 <li>
-                    <Link to='/register' className='button full-width'>Create your itsyours account</Link>
+                    <Link to='/register' className='button primary'>Create your account</Link>
                 </li>
             </ul>
         </form>
