@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.post('/signin', async (req, res) => {
 
-    const signinUser = await User.findOne({
+    const signinUser = await User.find({
         email: req.body.email,
         password: req.body.password,
     });
@@ -20,7 +20,7 @@ router.post('/signin', async (req, res) => {
             token: getToken(signinUser)
         })
     } else {
-        res.status(401).send({ message: 'Invalid Email or Password' });
+        res.status(401).send({ message: 'Invalid Email or Password.' });
     }
 
 })
@@ -29,7 +29,7 @@ router.get('/createadmin', async (req, res) => {
     try {
         const user = new User({
             name: 'Jorge',
-            email: 'jorgecaceresorellana@gmail.com',
+            email: 'jaco@gmail.com',
             password: 'thesquiner9419',
             isAdmin: true
         });
