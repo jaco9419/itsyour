@@ -63,6 +63,7 @@ function ProductScreen(props) {
                                     value={qty}
                                     onChange={(e) => {
                                         setQty(e.target.value);
+                                        console.log(e.target.value)
                                     }}
                                 >
                                     {[
